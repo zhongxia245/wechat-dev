@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图灵机器人测试</title>
+</head>
+
+<body>
+    <h3>图灵机器人，蛮不错的，可以试试？</h3>
+    问:<input type="text" id="robot" onkeypress="showHint(this.value)" />
+    <input type="button" value="发送" onclick="Send(document.getElementById('robot').value)" /> 当键盘敲击回车时发送
+    <p>答: <span id="txtHint"></span></p>
+    <script>
+        var xmlHttp
+        function showHint(str) {
+            if (event.keyCode == 13) {
+                Send(str);
+            }
+        }
+        function Send(str) {
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+            xmlHttp = GetXmlHttpObject()
+            if (xmlHttp == null) {
+                alert("您的浏览器不支持AJAX！");
+                return;
+            }
+            var url = "http://www.tuling123.com/openapi/api?key=e825286159f9f57db1b597995d72ae2b";
+            url = url + "&info=" + str;
+            url = url + "&userid=1234";
+            xmlHttp.onreadystatechange = stateChanged;
+            xmlHttp.open("GET", url, true);
+            xmlHttp.send(null);
+            document.getElementById("robot").value = "";
+        }
+
+        function stateChanged() {
+            if (xmlHttp.readyState == 4) {
+                var msg = eval('(' + xmlHttp.responseText + ')');
+                document.getElementById("txtHint").innerHTML = msg.text;
+            }
+        }
+
+        function GetXmlHttpObject() {
+            var xmlHttp = null;
+            try {
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp = new XMLHttpRequest();
+            }
+            catch (e) {
+                // Internet Explorer
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            return xmlHttp;
+        }
+    </script>
+</body>
+
+</html>

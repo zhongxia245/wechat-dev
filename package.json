@@ -1,0 +1,30 @@
+{
+  "name": "wechat-dev",
+  "version": "1.0.0",
+  "description": "微信公众号，目前是个人帐号，很多功能没办法用，需要搞一个测试号",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server"
+  },
+  "keywords": [
+    "wechat",
+    "express"
+  ],
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "body-parser": "^1.15.2",
+    "body-parser-xml": "^1.1.0",
+    "cheerio": "^0.20.0",
+    "express": "^4.14.0",
+    "iconv": "^2.2.1",
+    "iconv-lite": "^0.4.13",
+    "nunjucks": "^2.4.2",
+    "request": "^2.72.0",
+    "superagent": "^2.0.0",
+    "xml2js": "^0.4.16"
+  },
+  "enginesapp": {
+    "node": "4.x"
+  },
+  "devDependencies": {}
+}
