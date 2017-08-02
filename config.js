@@ -1,5 +1,4 @@
 module.exports = {
-  port: 3000,
   token: 'zhongxia',
   appId: 'wx9455c903881f5334',
   appSecret: 'ac41051513de4ed8721318c4189b943f',

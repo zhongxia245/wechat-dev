@@ -4,7 +4,7 @@
   "description": "微信公众号，目前是个人帐号，很多功能没办法用，需要搞一个测试号",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server"
+    "start": "nodemon server.js"
   },
   "keywords": [
     "wechat",
@@ -26,5 +26,18 @@
   "enginesapp": {
     "node": "4.x"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhongxia245/wechat-dev.git"
+  },
+  "author": "zhongxia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhongxia245/wechat-dev/issues"
+  },
+  "homepage": "https://github.com/zhongxia245/wechat-dev#readme"
 }
