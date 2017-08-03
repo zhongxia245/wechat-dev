@@ -8,6 +8,7 @@ require('body-parser-xml')(bodyParser)         // 用来解析 XML 文件
 const weixin = require('./routes/weixin')
 const auth = require('./routes/auth')
 const userinfo = require('./routes/userinfo')
+const db = require('./routes/db')
 
 //引入token刷新
 const getToken = require('./libs/common')
@@ -41,6 +42,7 @@ app.set('view engine', 'html')
 app.use('/wechat', weixin)
 app.use(auth)
 app.use(userinfo)
+app.use('/db', db)
 
 app.get('/', function (req, res) {
   res.render('index.html')

@@ -14,13 +14,12 @@ function getToken(code) {
 
   let options = {
     method: 'get',
-    url: reqUrl+qs.stringify(params)
+    url: reqUrl + qs.stringify(params)
   };
-  console.log(options.url);
+
   return new Promise((resolve, reject) => {
     request(options, function (err, res, body) {
       if (res) {
-        console.log(body)
         resolve(body);
       } else {
         reject(err);

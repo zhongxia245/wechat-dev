@@ -12,9 +12,9 @@ function getUserInfo(AccessToken, openId) {
 
   let options = {
     method: 'get',
-    url: reqUrl+qs.stringify(params)
+    url: reqUrl + qs.stringify(params)
   };
-  
+
   return new Promise((resolve, reject) => {
     request(options, function (err, res, body) {
       if (res) {
