@@ -11,7 +11,7 @@ function getTuringResponse(info) {
   }
   var options = {
     method: 'GET',
-    url: '//www.tuling123.com/openapi/api?key=' + config.turingKey + '&info=' + info,
+    url: 'http://www.tuling123.com/openapi/api?key=' + config.turingKey + '&info=' + info,
     headers: {
       'apikey': config.turingKey
     }
